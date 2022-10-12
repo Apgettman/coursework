@@ -1,9 +1,7 @@
 package coursework;
-
 public class CourseWork {
-
     private static final Employee[] employee = new Employee[5];
-
+    // coursework
     public static void main(String[] args) {
         employee[0] = new Employee("Петров Петр Петрович ", 1, 280000);
         employee[1] = new Employee("Иванов Иван Иванович", 2, 325500);
@@ -14,14 +12,9 @@ public class CourseWork {
         System.out.println("Сумма затрат на зарплаты сотрудников составляет: " + sumSalary() + " рублей!");
         System.out.println("Минимальная зарплата сотрудника " + getMinSalary() + " рублей!");
         System.out.println("Максимальная зарплата сотрудника " + getMaxSalary() + " рублей!");
-
-        int average = sumSalary() / employee.length;
-        System.out.println("Среднее значение зарплат " + average + " рублей!");
-
+        System.out.println("Среднее значение зарплат " + getAverage() + " рублей!");
         System.out.println("Список всех " + listOfEmployee() + " сотрудников!");
-
     }
-
     public static int sumSalary() {
         int sum = 0;
         for (Employee employee : employee) {
@@ -31,8 +24,6 @@ public class CourseWork {
         }
         return sum;
     }
-
-
     public static Employee getMaxSalary() {
         int max = Integer.MIN_VALUE;
         Employee maxEmployee = null;
@@ -44,7 +35,6 @@ public class CourseWork {
         }
         return maxEmployee;
     }
-
     public static Employee getMinSalary() {
         int min = Integer.MAX_VALUE;
         Employee minEmployee = null;
@@ -56,7 +46,16 @@ public class CourseWork {
         }
         return minEmployee;
     }
-
+    public static int getAverage() {
+        int average = 0;
+        for (Employee a : employee) {
+            if (a != null) {
+                average = sumSalary();
+                average = average / employee.length;
+            }
+        }
+        return average;
+    }
     public static int listOfEmployee() {
         for (Employee employee : employee) {
             System.out.println(employee.getFullName());
