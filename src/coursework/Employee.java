@@ -1,7 +1,7 @@
 package coursework;
      // coursework
 public class Employee {
-    private  final String fullName;
+    private final String fullName;
     private  final int salary;
     private static int counter = 0;
     private final int id;
@@ -34,7 +34,7 @@ public class Employee {
         return this.salary;
     }
 
-    public int setDepartment(int department) {
+    public int setDepartment() {
 
         return this.department;
     }
