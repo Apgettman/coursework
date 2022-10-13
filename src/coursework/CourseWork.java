@@ -1,6 +1,7 @@
 package coursework;
 public class CourseWork {
-    private static final Employee[] employee = new Employee[5];
+    private static final Employee[] employee = new Employee[10];
+
     // coursework
     public static void main(String[] args) {
         employee[0] = new Employee("Петров Петр Петрович ", 1, 280000);
@@ -14,7 +15,9 @@ public class CourseWork {
         System.out.println("Максимальная зарплата сотрудника " + getMaxSalary() + " рублей!");
         System.out.println("Среднее значение зарплат " + getAverage() + " рублей!");
         System.out.println("Список всех " + listOfEmployee() + " сотрудников!");
+        System.out.println("Список всех " + fioEmployee() + " сотрудников!");
     }
+
     public static int sumSalary() {
         int sum = 0;
         for (Employee employee : employee) {
@@ -24,6 +27,7 @@ public class CourseWork {
         }
         return sum;
     }
+
     public static Employee getMaxSalary() {
         int max = Integer.MIN_VALUE;
         Employee maxEmployee = null;
@@ -35,6 +39,7 @@ public class CourseWork {
         }
         return maxEmployee;
     }
+
     public static Employee getMinSalary() {
         int min = Integer.MAX_VALUE;
         Employee minEmployee = null;
@@ -46,20 +51,29 @@ public class CourseWork {
         }
         return minEmployee;
     }
+
     public static int getAverage() {
-        int average = 0;
+        int count = 0;
         for (Employee a : employee) {
             if (a != null) {
-                average = sumSalary();
-                average = average / employee.length;
+                count++;
             }
         }
-        return average;
+        return sumSalary() / count;
     }
+
     public static int listOfEmployee() {
-        for (Employee employee : employee) {
-            System.out.println(employee.getFullName());
+        for (Employee listOf : employee) {
+            System.out.println(listOf);
         }
+        return employee.length;
+    }
+
+    public static int fioEmployee() {
+        for (Employee fio : employee)
+            if (fio != null) {
+                System.out.println(fio.getFullName());
+            }
         return employee.length;
     }
 }
